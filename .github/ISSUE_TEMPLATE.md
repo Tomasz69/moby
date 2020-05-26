@@ -32,7 +32,7 @@ General support for **moby** can be found at the following locations:
 ---------------------------------------------------
 BUG REPORT INFORMATION
 ---------------------------------------------------
-Use the commands below to provide key information from your environment:
+Use the commands below to provide information from your environment:
 You do NOT have to include this information if this is a FEATURE REQUEST
 -->
 
@@ -43,9 +43,9 @@ Briefly describe the problem you are having in a few paragraphs.
 -->
 
 **Steps to reproduce the issue:**
-1.
-2.
-3.
+1.run
+2.free
+3.master
 
 **Describe the results you received:**
 
