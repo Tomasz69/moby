@@ -768,6 +768,14 @@ func WithCommonOptions(daemon *Daemon, c *container.Container) coci.SpecOpts {
 		s.Hostname = c.Config.Hostname
 		setLinuxDomainname(c, s)
 
+		// add default sysctls that are generally safe and useful; currently we
+		// grant the capabilities to allow these anyway. You can override if
+		// you want to restore the original behaviour.
+		// allow unprivileged ICMP echo sockets without CAP_NET_RAW
+		s.Linux.Sysctl["net.ipv4.ping_group_range"] = "0 2147483647"
+		// allow opening any port less than 1024 without CAP_NET_BIND_SERVICE
+		s.Linux.Sysctl["net.ipv4.ip_unprivileged_port_start"] = "0"
+
 		return nil
 	}
 }
